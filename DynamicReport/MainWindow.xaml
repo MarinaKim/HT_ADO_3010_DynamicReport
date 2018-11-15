@@ -1,0 +1,38 @@
+﻿<Window x:Class="DynamicReport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DynamicReport"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="825">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Visible">
+            <StackPanel x:Name="wrap1" Margin="10"/>
+
+        </ScrollViewer>
+
+        <Grid Grid.Column="1">
+            <ListBox x:Name="tableRow">
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Dobavit' v viborku" Click="MenuItem_Click"></MenuItem>
+                        <MenuItem Header="Dobavit' v uslovie"></MenuItem>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+        </Grid>
+        <DockPanel LastChildFill="True" Grid.Column="2">
+            <Button Click="Button_Click" Padding="5" DockPanel.Dock="Bottom">Add</Button>
+            <TextBlock TextWrapping="Wrap" x:Name="rtbx" Margin="10"></TextBlock>
+        </DockPanel>
+
+    </Grid>
+</Window>
